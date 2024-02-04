@@ -1,89 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>
-    <link rel="stylesheet" href="fullpage.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="fullpage.min.js"></script>
+    <title>Расчет стоимости доставки</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--
+        Укажите свой API-ключ. Тестовый ключ НЕ БУДЕТ работать на других сайтах.
+        Получить ключ можно в Кабинете разработчика: https://developer.tech.yandex.ru/keys/
+    -->
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=bbef6c37-e403-41f4-8272-2bbbcc4da88c" type="text/javascript"></script>
+    <script src="deliveryCalculator.js" type="text/javascript"></script>
+    <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
 </head>
-<body class="main-page" style="background-image: url(fon.jpg);">
-    <div id="fullpage">
-        <div class="section main-images-page">
-            <div class="main-tittle">
-                <h1>Торговое оборудование</h1>
-            </div>
-            <div>
-                <img class="main-img" src="tovar1.png">
-                <img class="main-img" src="tovar2.png">
-                <img class="main-img" src="tovar3.png">
-                <img class="main-img" src="tovar4.png">
-            </div>
-        </div>
-        <div class="section">
-            <div class="collection-page">
-                <p class="tittle">BEAUTY GLASS<br>Collection</br></p>
-                <div class="section-images">
-                    <div class="img-conteiner" style="top: 0;
-                    left: 35%;
-                    transform: translate(-65%, 0)">
-                        <img src="dada.png" >
-                    </div>
-                    <div class="img-conteiner" style="top: 0;
-                    left: 45%;
-                    transform: translate(-55%, 0)">
-                        <img src="dada.png">
-                    </div>
-                    <div class="img-conteiner" style="top: 0;
-                    left: 55%;
-                    transform: translate(-45%, 0)">
-                        <img src="dada.png">
-                    </div>
-                    <div class="img-conteiner" style="top: 0;
-                    left: 65%;
-                    transform: translate(-35%, 0)">
-                        <img src="dada.png">
-                    </div>
-                    <!-- <div class="img-back" style="background-image: url(dada.png);"></div> -->
-                </div>
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Numquam exercitationem error dolores?</br></p>
-            </div>
-        </div>
-        <!-- <div class="section">
-            <div class="section-foto section-left" style="background-image: url(tovar1.png)"></div>
-            <div class="section-text text-right">
-                <p class="description-tittle">Описание 1 коллекции</p>
-                <p class="description-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam exercitationem error dolores? Alias enim facere suscipit voluptas? Necessitatibus cum eius dignissimos voluptates aliquam facilis minima dolorem officiis totam ab ex, quis at modi porro dolorum voluptate, quibusdam sapiente. Omnis cupiditate iste non fuga repellendus ex aliquid facilis, odit commodi saepe.</p>
-            </div>
-        </div>
-        <div class="section">
-            <div class="section-right section-foto" style="background-image: url(tovar2.png);"></div>
-            <div class="section-text text-left">
-                <p class="description-tittle">Описание 2 коллекции</p>
-                <p class="description-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, quia! Molestias libero, repellat obcaecati veritatis harum officia natus reiciendis repellendus saepe, nulla inventore in voluptatem voluptatibus expedita odio labore recusandae veniam repudiandae totam impedit iusto nihil ea eveniet voluptates. Libero et praesentium porro molestias quos dolore dicta possimus minima architecto?</p>
-            </div>
-        </div>
-        <div class="section">
-            <div class="section-foto section-left" style="background-image: url(tovar3.png);"></div>
-            <div class="section-text text-right">
-                <p class="description-tittle">Описание 3 коллекции</p>
-                <p class="description-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime eos rerum blanditiis quod consequuntur ipsa quo repudiandae asperiores dolorum. Aut non quaerat iste! Non quod ducimus libero magni temporibus, rem veritatis dolorem! Repellat laborum quod quo eveniet! Adipisci corporis voluptatum ipsam veritatis magnam sapiente quas recusandae possimus, saepe dolorem placeat.</p>
-            </div>
-        </div>
-        <div class="section">
-            <div class="section-right section-foto" style="background-image: url(tovar4.png);"></div>
-            <div class="section-text text-left">
-                <p class="description-tittle">Описание 4 коллекции</p>
-                <p class="description-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum obcaecati pariatur iure dolor corrupti reiciendis vero voluptatibus doloribus voluptates aspernatur ea rem iusto id vel fuga, atque, autem quis architecto impedit tempore assumenda quod aliquam. Non perspiciatis possimus enim ipsam nesciunt quisquam aperiam alias quidem? Quas modi sapiente corrupti aut?</p>
-            </div>
-        </div> -->
-    </div>
-    <script>
-        $(function(){
-            $('#fullpage').fullpage();
-        })
-    </script>
+<body>
+    <div id="map"></div>
 </body>
 </html>
